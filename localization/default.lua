@@ -18,8 +18,8 @@ return {
             bl_myst_center = {
                 name = "The Center",
                 text = {
-                    "Permanent +$1 price per",
-                    "unused hand on defeat"
+                    "Permanent +$1 shop prices per",
+                    "unused hand when defeated"
                 }
             },
             bl_myst_food = {

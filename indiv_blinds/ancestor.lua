@@ -49,15 +49,7 @@ blind.disable = function(self, blind)
 end
 
 blind.loc_vars = function(self, blind)
-    if blind and blind.discards_sub then 
-        return { vars = {blind.discards_sub} }
-    end
-
-    if G.GAME and G.GAME.round then 
-        return { vars = {math.min(math.ceil((G.GAME.round + 1) * 1.5), math.ceil(#G.playing_cards))} } 
-    end
-
-    return { vars = {localize('ph_ancestor')} }
+    return { vars = {math.min(math.ceil(G.GAME.round * 1.5), math.ceil(#G.playing_cards))} } 
 end
 
 
