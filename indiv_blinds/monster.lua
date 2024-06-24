@@ -12,7 +12,7 @@ local blind = {
 }
 
 
-blind.set_blind = function(self, blind, reset, silent)
+blind.set_blind = function(self, reset, silent)
     G.GAME.consumeable_buffer = 0
     blind.hands_sub = 0
 
@@ -24,19 +24,18 @@ blind.set_blind = function(self, blind, reset, silent)
 
         G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
             blind.hands_sub = G.consumeables.config.card_limit
-            G.consumeables.config.card_limit = G.consumeables.config.card_limit - blind.hands_sub
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit - G.GAME.blind.hands_sub
             return true
         end}))
     end
 end
 
-blind.disable = function(self, blind)
-    G.consumeables.config.card_limit = G.consumeables.config.card_limit + blind.hands_sub
+blind.disable = function(self)
+    G.consumeables.config.card_limit = G.consumeables.config.card_limit + G.GAME.blind.hands_sub
 end
 
-blind.defeat = function(self, blind)
-    sendDebugMessage("defeated")
-    G.consumeables.config.card_limit = G.consumeables.config.card_limit + blind.hands_sub
+blind.defeat = function(self)
+    G.consumeables.config.card_limit = G.consumeables.config.card_limit + G.GAME.blind.hands_sub
 end
 
 return blind

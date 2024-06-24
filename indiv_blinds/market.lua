@@ -11,17 +11,17 @@ local blind = {
     loc_txt = {}
 }
 
-blind.set_blind = function(self, blind, reset, silent)
-    blind.prepped = nil
+blind.set_blind = function(self, reset, silent)
+    G.GAME.blind.prepped = nil
 end
 
-blind.press_play = function(self, blind)
-    blind.prepped = true
+blind.press_play = function(self)
+    G.GAME.blind.prepped = true
 end
 
-blind.drawn_to_hand = function(self, blind)
-    if blind.prepped then
-        blind:wiggle()
+blind.drawn_to_hand = function(self)
+    if G.GAME.blind.prepped then
+        G.GAME.blind:wiggle()
         G.E_MANAGER:add_event(Event({
             trigger = 'ease',
             blocking = false,

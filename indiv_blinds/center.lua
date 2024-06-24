@@ -11,10 +11,10 @@ local blind = {
     loc_txt = {}
 }
 
-blind.defeat = function(self, blind)
-    if not blind.disabled then
+blind.defeat = function(self)
+    if not G.GAME.blind.disabled then
         if G.GAME.current_round.hands_left > 0 then
-            blind:wiggle()
+            G.GAME.blind:wiggle()
             G.GAME.inflation = G.GAME.inflation or 0
             G.GAME.inflation = G.GAME.inflation + G.GAME.current_round.hands_left
         end

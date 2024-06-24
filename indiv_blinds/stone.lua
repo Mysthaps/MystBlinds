@@ -11,7 +11,7 @@ local blind = {
     loc_txt = {}
 }
 
-blind.debuff_card = function(self, blind, card, from_blind)
+blind.debuff_card = function(self, card, from_blind)
     if card.area ~= G.jokers and card.config.center ~= G.P_CENTERS.c_base then
         return true
     end

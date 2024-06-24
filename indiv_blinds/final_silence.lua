@@ -11,31 +11,31 @@ local blind = {
     loc_txt = {}
 }
 
-blind.set_blind = function(self, blind, reset, silent)
-    blind.prepped = nil
-    blind.hands_sub = math.min(G.hand.config.card_limit - 1, 4)
-    G.hand:change_size(-blind.hands_sub)
+blind.set_blind = function(self, reset, silent)
+    G.GAME.blind.prepped = nil
+    G.GAME.blind.hands_sub = math.min(G.hand.config.card_limit - 1, 4)
+    G.hand:change_size(-G.GAME.blind.hands_sub)
 end
 
-blind.disable = function(self, blind)
-    G.hand:change_size(blind.hands_sub)
-    G.FUNCS.draw_from_deck_to_hand(blind.hands_sub)
-    blind.hands_sub = 0
+blind.disable = function(self)
+    G.hand:change_size(G.GAME.blind.hands_sub)
+    G.FUNCS.draw_from_deck_to_hand(G.GAME.blind.hands_sub)
+    G.GAME.blind.hands_sub = 0
 end
 
-blind.defeat = function(self, blind, silent)
-    G.hand:change_size(blind.hands_sub)
+blind.defeat = function(self, silent)
+    G.hand:change_size(G.GAME.blind.hands_sub)
 end
 
-blind.press_play = function(self, blind)
-    blind.prepped = true
+blind.press_play = function(self)
+    G.GAME.blind.prepped = true
 end
 
-blind.drawn_to_hand = function(self, blind)
-    if blind.prepped then
+blind.drawn_to_hand = function(self)
+    if G.GAME.blind.prepped then
         G.hand:change_size(1)
-        blind.hands_sub = blind.hands_sub - 1 -- size removed
-        blind:wiggle()
+        G.GAME.blind.hands_sub = G.GAME.blind.hands_sub - 1 -- size removed
+        G.GAME.blind:wiggle()
     end
 end
 
