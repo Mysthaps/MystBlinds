@@ -23,7 +23,7 @@ blind.set_blind = function(self, reset, silent)
         end
 
         G.E_MANAGER:add_event(Event({trigger = 'immediate', func = function()
-            blind.hands_sub = G.consumeables.config.card_limit
+            G.GAME.blind.hands_sub = G.consumeables.config.card_limit
             G.consumeables.config.card_limit = G.consumeables.config.card_limit - G.GAME.blind.hands_sub
             return true
         end}))
