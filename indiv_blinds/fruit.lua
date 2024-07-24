@@ -23,4 +23,10 @@ blind.debuff_hand = function(self, cards, hand, handname, check)
     end
 end
 
+blind.defeat = function(self)
+    if G.GAME.bosses_used["bl_myst_fruit"] >= G.GAME.bosses_used["bl_myst_food"] then
+        G.GAME.bosses_used["bl_myst_food"] = G.GAME.bosses_used["bl_myst_food"] + 1
+    end
+end
+
 return blind

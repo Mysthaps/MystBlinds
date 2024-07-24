@@ -6,7 +6,7 @@ local blind = {
     mult = 2, 
     vars = {}, 
     debuff = {},
-    boss = {min = 1, max = 10},
+    boss = {min = 2, max = 10},
     boss_colour = HEX('1EE68E'),
     loc_txt = {}
 }
@@ -20,6 +20,12 @@ blind.debuff_hand = function(self, cards, hand, handname, check)
     if total % 2 == 1 then
         G.GAME.blind.triggered = true
         return true
+    end
+end
+
+blind.defeat = function(self)
+    if G.GAME.bosses_used["bl_myst_food"] >= G.GAME.bosses_used["bl_myst_fruit"] then
+        G.GAME.bosses_used["bl_myst_fruit"] = G.GAME.bosses_used["bl_myst_fruit"] + 1
     end
 end
 

@@ -6,7 +6,7 @@ local blind = {
     mult = 2, 
     vars = {}, 
     debuff = {},
-    boss = {min = 1, max = 10},
+    boss = {min = 4, max = 10},
     boss_colour = HEX('9CE0F0'),
     loc_txt = {}
 }
