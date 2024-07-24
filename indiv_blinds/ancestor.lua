@@ -9,10 +9,6 @@ local blind = {
     boss = {min = 2, max = 10},
     boss_colour = HEX('E67CDA'),
     loc_txt = {},
-    process_loc_text = function(self)
-        self.super.process_loc_text(self)
-        self.vars = {localize('ph_myst_ancestor')}
-    end
 }
 
 blind.set_blind = function(self, reset, silent)
@@ -52,5 +48,8 @@ blind.loc_vars = function(self)
     return { vars = {math.min(math.ceil(G.GAME.round * 1.5), math.ceil(#G.playing_cards))} } 
 end
 
+blind.collection_loc_vars = function(self)
+    return { vars = {localize('ph_myst_ancestor')} }
+end
 
 return blind
