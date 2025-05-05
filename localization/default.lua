@@ -71,11 +71,31 @@ return {
                     "in deck per scored card"
                 }
             },
+            bl_myst_soil = {
+                name = "The Soil",
+                text = {
+                    "Debuffs first scoring card",
+                }
+            },
+            bl_myst_power = {
+                name = "The Power",
+                text = {
+                    "Lose $2 per non-Enhanced",
+                    "card hand in hand"
+                }
+            },
+            bl_myst_fight = {
+                name = "The Fight",
+                text = {
+                    "Each Joker gives",
+                    "X0.95 Mult"
+                }
+            },
             bl_myst_final_silence = {
                 name = "Noir Silence",
                 text = {
-                    "-4 Hand Size, +1 Hand Size",
-                    "after each hand played"
+                    "-4 Hand Size, +1 after each",
+                    "hand played (max. 3)"
                 }
             },
             bl_myst_final_mist = {

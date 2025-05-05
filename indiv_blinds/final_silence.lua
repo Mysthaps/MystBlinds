@@ -1,6 +1,5 @@
 local blind = {
     name = "Noir Silence",
-    slug = "final_silence", 
     pos = { x = 0, y = 4 },
     dollars = 8, 
     mult = 2, 
@@ -32,7 +31,7 @@ blind.press_play = function(self)
 end
 
 blind.drawn_to_hand = function(self)
-    if G.GAME.blind.prepped then
+    if G.GAME.blind.prepped and G.GAME.blind.hands_sub > 1 then
         G.hand:change_size(1)
         G.GAME.blind.hands_sub = G.GAME.blind.hands_sub - 1 -- size removed
         G.GAME.blind:wiggle()

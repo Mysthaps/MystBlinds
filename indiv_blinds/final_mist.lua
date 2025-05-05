@@ -1,6 +1,5 @@
 local blind = {
     name = "Scarlet Mist",
-    slug = "final_mist", 
     pos = { x = 0, y = 7 },
     dollars = 8, 
     mult = 2, 

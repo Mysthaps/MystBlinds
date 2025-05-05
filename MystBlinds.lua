@@ -6,21 +6,24 @@
 --- MOD_DESCRIPTION: A pack of Blinds
 --- DISPLAY_NAME: MystBlinds
 --- BADGE_COLOUR: EDA9D3
---- VERSION: 1.2.6
+--- VERSION: 1.3.0
 
 local blind_list = {
     "market",
     "stone",
     "monster",
     "insect",
-    "final_silence",
     "bird",
     "ancestor",
-    "final_mist",
     "fruit",
     "food",
     "center",
     "symbol",
+    "soil",
+    "power",
+    "fight",
+    "final_mist",
+    "final_silence",
 }
 
 local mod_path = SMODS.current_mod.path

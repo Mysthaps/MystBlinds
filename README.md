@@ -1,7 +1,7 @@
 a balatro mod that adds several new blinds
 
 # Requirements
-Requires the latest version **Steamodded** 1.0.0-ALPHA.  
+Requires the latest version **Steamodded** 1.0.0-BETA.  
 Instructions can be found [here](https://github.com/Steamopollys/Steamodded/wiki/01.-Getting-started).
 
 # Installation

@@ -1,6 +1,5 @@
 local blind = {
     name = "The Symbol",
-    slug = "symbol", 
     pos = { x = 0, y = 11 },
     dollars = 5, 
     mult = 2, 

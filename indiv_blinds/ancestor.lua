@@ -1,6 +1,5 @@
 local blind = {
     name = "The Ancestor",
-    slug = "ancestor", 
     pos = { x = 0, y = 6 },
     dollars = 5, 
     mult = 2, 
@@ -19,7 +18,7 @@ blind.set_blind = function(self, reset, silent)
         available_cards[#available_cards+1] = v
     end
 
-    for i = 1, math.min(G.GAME.blind.discards_sub, math.ceil(#available_cards)) do
+    for i = 1, math.min(G.GAME.blind.discards_sub, math.ceil(#available_cards/2)) do
         local chosen_card, chosen_card_key = pseudorandom_element(available_cards, pseudoseed("random_card"))
         chosen_card.ability.wheel_flipped = true
         table.remove(available_cards, chosen_card_key)
@@ -45,7 +44,7 @@ blind.disable = function(self)
 end
 
 blind.loc_vars = function(self)
-    return { vars = {math.min(math.ceil(G.GAME.round * 1.5), math.ceil(#G.playing_cards))} } 
+    return { vars = {math.min(math.ceil((G.GAME.round+1) * 1.5), math.ceil(#G.playing_cards/2))} } 
 end
 
 blind.collection_loc_vars = function(self)
