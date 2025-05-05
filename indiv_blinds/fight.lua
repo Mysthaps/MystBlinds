@@ -20,12 +20,13 @@ blind.calculate = function(self, card, context)
         }))
         return {
             x_mult = 0.95,
-            message = localize{type = 'variable', key = 'a_x_mult', vars = {0.95}},
+            message = localize{type = 'variable', key = 'a_xmult', vars = {0.95}},
             card = context.other_joker,
             colour = G.C.PURPLE,
             sound = "tarot2",
             volume = 0.6,
-            pitch = 0.7
+            pitch = 0.7,
+            remove_default_message = true
         }
     end
 end
